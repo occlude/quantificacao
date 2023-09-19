@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>RDC2023</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <section>
+                <h2>REDES DE COMPUTADORES - Material Óptico</h2>
+                <h4>Arthur Ribeiro, Sofia Luiz e Victor Schneider - INF3A</h4>
+            </section>
+        </header>
+        <main>
+            <section>
+                <form class="container needs-validation" id="form">
+                    <div id="container-backbone-primario">
+                        <h1>Backbone primário</h1>
+                        <div>
+                            <label for="caracteristicas-primario">Características da fibra óptica</label>
+                            <select id="caracteristicas-primario" name="caracteristicas-primario">
+                                <option value="1">FOMMIG 50 x 125µm 850nm</option>
+                                <option value="2" selected>FOMMIG 50 x 125µm 1310nm</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="backbone-primario">Quantidade de Backbone</label>
+                            <input type="number" id="backbone-primario" name="backbone-primario"
+                                value="1" required>
+                        </div>
+                        <div>
+                            <label for="disponivel-primario">Número de pares de fibra</label>
+                            <input type="number" id="disponivel-primario"
+                                name="disponivel-primario" value="8" required>
+                        </div>
+                        <div>
+                            <label for="distancia">Distância em metros entre os pavimentos</label>
+                            <input type="number" id="distancia" name="distancia" value="5"
+                                required>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Haverá outro backbone?</p>
+                        <div>
+                            <input type="radio" id="possui-secundario-sim" name="possui-secundario" value="1">
+                            <label for="possui-secundario-sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="possui-secundario-nao" name="possui-secundario" value="0" checked>
+                            <label for="possui-secundario-nao">Não</label>
+                        </div>
+                    </div>
+                    <div id="container-backbone-secundario">
+                        <h1>Backbone secundário</h1>
+                        <div>
+                            <label for="pavimentos">Número de pavimentos</label>
+                            <input type="number" id="pavimentos" name="pavimentos" value="0"
+                                required>
+                        </div>
+                        <div>
+                            <label for="pe-direito">Altura do pavimento</label>
+                            <input type="number" id="pe-direito" name="pe-direito" value="0"
+                                required>
+                        </div>
+                        <div>
+                            <label for="caracteristicas-secundario">Características da fibra
+                                óptica</label>
+                            <select id="caracteristicas-secundario"
+                                name="caracteristicas-secundario">
+                                <option value="1">FOMMIG 50 x 125µm 850nm</option>
+                                <option value="2" selected>FOMMIG 50 x 125µm 1310nm</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="backbone-secundario">Número de Backbones</label>
+                            <input type="number" id="backbone-secundario"
+                                name="backbone-secundario" value="0" required>
+                        </div>
+                        <div>
+                            <label for="disponivel-secundario">Número de pares de fibra</label>
+                            <input type="text" id="disponivel-secundario"
+                                name="disponivel-secundario" value="0" required>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" id="calcular">Gerar Planilha</button>
+                    </div>
+                </form>
+            </section>
+            <section>
+                <table class="table hidden">
+                    <tr>
+                        <th scope="col">Nº</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Medida</th>
+                        <th scope="col">Quantia</th>
+                    </tr>
+                    <tbody>
+                        <tr id="backbone">
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
